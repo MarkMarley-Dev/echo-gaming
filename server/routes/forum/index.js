@@ -10,15 +10,13 @@ const postComment = require("../../controllers/forum/POSTComment");
 
 forumRouter.route("/topic").get(getTopicList);
 forumRouter.route("/topic/:topicId").get(getTopic);
-forumRouter.route("/topic/:topicId/comment").post(postComment);
+
 //endgame
 // forumRouter.route("/topic").get(getTopicList).post(addTopic);
 
 // forumRouter.route("/topic/:topicId").delete(deleteTopic).get(getTopic);
 
-// forumRouter
-//   .route("/topic/:topicId/comment")
-//   .post(addComment)
+forumRouter.route("/topic/:topicId/comment").post(postComment);
 //   .delete(deleteComment);
 
 module.exports = forumRouter;

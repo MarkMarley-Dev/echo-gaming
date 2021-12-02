@@ -6,7 +6,7 @@ const readData = () => {
 };
 
 function postComment(req, res) {
-  console.log("Post comment request", req.body);
+  //   console.log("Post comment request", req.body);
   try {
     const { user, comment } = req.body;
     const commentData = JSON.parse(fs.readFileSync("./data/topics.json"));
@@ -23,6 +23,4 @@ function postComment(req, res) {
   }
 }
 
-module.exports = {
-  postComment,
-};
+module.exports = postComment;
