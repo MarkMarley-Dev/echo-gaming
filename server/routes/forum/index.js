@@ -2,6 +2,7 @@ const forumRouter = require("express").Router();
 
 const getTopic = require("../../controllers/forum/GETTopic");
 const getTopicList = require("../../controllers/forum/GETTopicList");
+const postComment = require("../../controllers/forum/POSTComment");
 // const addTopic = require("../../controllers/forum/POSTTopic");
 // const addComment = require("../../controllers/forum/POSTComment");
 // const deleteTopic = require("../../controllers/forum/DELETETopic");
@@ -9,6 +10,7 @@ const getTopicList = require("../../controllers/forum/GETTopicList");
 
 forumRouter.route("/topic").get(getTopicList);
 forumRouter.route("/topic/:topicId").get(getTopic);
+forumRouter.route("/topic/:topicId/comment").post(postComment);
 //endgame
 // forumRouter.route("/topic").get(getTopicList).post(addTopic);
 

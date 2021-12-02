@@ -1,9 +1,11 @@
 import React from "react";
-
-export default function Forum({ topicTitle, TopicID }) {
+import { Link } from "react-router-dom";
+export default function Forum({ topicTitle, topicID }) {
   return (
-    <article>
-      <h2>{topicTitle}</h2>
-    </article>
+    <Link to={`/topic/${topicID}`}>
+      <article>
+        <h2>{topicTitle}</h2>
+      </article>
+    </Link>
   );
 }

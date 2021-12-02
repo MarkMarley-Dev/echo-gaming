@@ -4,7 +4,7 @@ const fs = require("fs");
 
 function getTopic(req, res) {
   try {
-    const topicToFind = req.params.id;
+    const topicToFind = req.params.topicId;
 
     const topicData = JSON.parse(fs.readFileSync("./data/topics.json"));
     const topic = topicData.find((topic) => topic.id === topicToFind);
