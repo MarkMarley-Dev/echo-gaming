@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { TOPICS_LIST_API } from "../../utils/api";
+import { TOPICS_LIST_API, COMMENTS_LIST_API } from "../../utils/api";
 import CommentListItem from "../../Components/CommentListItem/CommentListItem";
 import { ToastContainer, toast } from "react-toastify";
 export default class ForumTopic extends Component {
@@ -13,6 +13,7 @@ export default class ForumTopic extends Component {
 
   componentDidMount() {
     let topicId = this.props.match.params.topicId;
+
     console.log(topicId);
     axios
       .get(`${TOPICS_LIST_API}/${topicId}`)
@@ -20,19 +21,32 @@ export default class ForumTopic extends Component {
         this.setState({
           user: response.data.title,
           topicContents: response.data.contents,
-          topicComments: response.data.comments,
         });
       })
       .catch((err) =>
         console.log("Something went wrong while fetching the topic data: ", err)
       );
+    axios
+      .get(`${COMMENTS_LIST_API}/${topicId}`)
+      .then((response) => {
+        this.setState({
+          topicComments: response.data.contents,
+        });
+      })
+      .catch((err) =>
+        console.log(
+          "Something went wrong while fetching the comment data: ",
+          err
+        )
+      );
   }
 
-  postVideo = () => {
+  postComment = () => {
     let topicId = this.props.match.params.topicId;
     console.log("this.state", this.state);
     axios
       .post(`${TOPICS_LIST_API}/${topicId}/comment`, {
+        topicId: topicId,
         user: this.state.user,
         comment: this.state.comment,
       })
@@ -89,11 +103,11 @@ export default class ForumTopic extends Component {
       );
     } else {
       this.setState({ formValid: true });
-      this.postVideo();
+      this.postComment();
     }
   };
   render() {
-    console.log(this.state);
+    console.log(this.state.topicComments);
     return (
       <div>
         {/* <ToastContainer
@@ -107,7 +121,7 @@ export default class ForumTopic extends Component {
           draggable
           pauseOnHover
         /> */}
-        <p> {this.state.user}</p>
+        {/* <p> {this.state.user}</p> */}
         {this.state.topicComments.map((comment) => {
           return (
             <CommentListItem

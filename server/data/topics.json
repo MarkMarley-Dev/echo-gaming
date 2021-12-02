@@ -4,37 +4,12 @@
     "title": "Hey I'm stuck on the water dungeon",
     "user": "MasterChief69420",
     "contents": "Hey everybody",
-    "game": "Zelda: Ocarina of time",
-    "comments": [
-      {
-        "user": "Wollivan",
-        "comment": "Have you tried gittin gud?",
-        "id": "123149"
-      }
-    ]
+    "game": "Zelda: Ocarina of time"
   },
   {
     "id": "2922c286-16cd-4d43-ab98-c79f698aeabww",
     "title": "How to not get rushed?",
     "contents": "Hey everybody",
-    "game": "AoE 2: Conquerers Edition",
-    "comments": [
-      {
-        "user": "Wollivan",
-        "comment": "Have you tried not being bad?",
-        "id": "123121"
-      }
-    ]
-  },
-  {
-    "user": "Hey I'm stuck on the water dungeon",
-    "comment": [
-      {
-        "user": "Wollivan",
-        "comment": "Have you tried gittin gud?",
-        "id": "123149"
-      }
-    ]
-  },
-  { "user": "sadsaa", "comment": "sdasdas" }
+    "game": "AoE 2: Conquerers Edition"
+  }
 ]
