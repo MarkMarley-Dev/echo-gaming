@@ -9,12 +9,19 @@ export default class ForumTopic extends Component {
     topicComments: [],
     topicContents: "",
     comment: "",
+    topicId: "",
   };
 
   componentDidMount() {
     let topicId = this.props.match.params.topicId;
+    this.setState({ topicId: topicId });
 
     console.log(topicId);
+    this.getTopicDetails(topicId);
+    this.getCommentsForTopic(topicId);
+  }
+
+  getTopicDetails = (topicId) => {
     axios
       .get(`${TOPICS_LIST_API}/${topicId}`)
       .then((response) => {
@@ -26,11 +33,14 @@ export default class ForumTopic extends Component {
       .catch((err) =>
         console.log("Something went wrong while fetching the topic data: ", err)
       );
+  };
+
+  getCommentsForTopic = (topicId) => {
     axios
       .get(`${COMMENTS_LIST_API}/${topicId}`)
       .then((response) => {
         this.setState({
-          topicComments: response.data.contents,
+          topicComments: response.data,
         });
       })
       .catch((err) =>
@@ -39,8 +49,7 @@ export default class ForumTopic extends Component {
           err
         )
       );
-  }
-
+  };
   postComment = () => {
     let topicId = this.props.match.params.topicId;
     console.log("this.state", this.state);
@@ -62,6 +71,7 @@ export default class ForumTopic extends Component {
           progress: undefined,
         });
       })
+      .then(() => this.getCommentsForTopic(this.state.topicId))
       .catch((error) => {
         console.log("There was a problem with your post request", error);
       });
@@ -87,6 +97,7 @@ export default class ForumTopic extends Component {
     console.log("i clicked the button");
     event.preventDefault();
 
+    console.log(this.state.topicComments);
     if (this.isFormFilled()) {
       this.setState({ formValid: false });
       toast.error(
@@ -103,6 +114,7 @@ export default class ForumTopic extends Component {
       );
     } else {
       this.setState({ formValid: true });
+
       this.postComment();
     }
   };
@@ -110,7 +122,7 @@ export default class ForumTopic extends Component {
     console.log(this.state.topicComments);
     return (
       <div>
-        {/* <ToastContainer
+        <ToastContainer
           position="top-left"
           autoClose={5000}
           hideProgressBar={false}
@@ -120,8 +132,8 @@ export default class ForumTopic extends Component {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-        /> */}
-        {/* <p> {this.state.user}</p> */}
+        />
+
         {this.state.topicComments.map((comment) => {
           return (
             <CommentListItem
@@ -135,11 +147,12 @@ export default class ForumTopic extends Component {
           <label>
             <p>username</p>
           </label>
-          <textarea
+          <input
+            type="text"
             className="form__user-input"
             name="user"
             onChange={this.handleChange}
-          ></textarea>
+          ></input>
           <label>
             <p>Comment</p>
           </label>
