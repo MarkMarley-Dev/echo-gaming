@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 import { TOPICS_LIST_API } from "../../utils/api";
 import CommentListItem from "../../Components/CommentListItem/CommentListItem";
-
+import { ToastContainer, toast } from "react-toastify";
 export default class ForumTopic extends Component {
   state = {
-    topicTitle: "",
-    topicContents: "",
+    user: "",
     topicComments: [],
+    topicContents: "",
+    comment: "",
   };
 
   componentDidMount() {
@@ -17,7 +18,7 @@ export default class ForumTopic extends Component {
       .get(`${TOPICS_LIST_API}/${topicId}`)
       .then((response) => {
         this.setState({
-          topicTitle: response.data.title,
+          user: response.data.title,
           topicContents: response.data.contents,
           topicComments: response.data.comments,
         });
@@ -28,11 +29,12 @@ export default class ForumTopic extends Component {
   }
 
   postVideo = () => {
+    let topicId = this.props.match.params.topicId;
     console.log("this.state", this.state);
     axios
       .post(`${TOPICS_LIST_API}/${topicId}/comment`, {
-        topictitle: this.state.topicTitle,
-        topicComments: this.state.topicComments,
+        user: this.state.user,
+        comment: this.state.comment,
       })
       .then((response) => {
         console.log("You have sent the post request", response);
@@ -55,6 +57,7 @@ export default class ForumTopic extends Component {
   handleChange = (event) => {
     console.log(event.target.value);
     this.setState({ [event.target.name]: event.target.value });
+    console.log(this.state);
   };
 
   // ? .. Checks if form fields are filled .. ? \\
@@ -93,7 +96,18 @@ export default class ForumTopic extends Component {
     console.log(this.state);
     return (
       <div>
-        <p> {this.state.topicTitle}</p>
+        {/* <ToastContainer
+          position="top-left"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        /> */}
+        <p> {this.state.user}</p>
         {this.state.topicComments.map((comment) => {
           return (
             <CommentListItem
@@ -107,11 +121,19 @@ export default class ForumTopic extends Component {
           <label>
             <p>username</p>
           </label>
-          <textarea className="form__user-input" name="user"></textarea>
+          <textarea
+            className="form__user-input"
+            name="user"
+            onChange={this.handleChange}
+          ></textarea>
           <label>
             <p>Comment</p>
           </label>
-          <textarea className="form__comment-input" name="comment"></textarea>
+          <textarea
+            className="form__comment-input"
+            name="comment"
+            onChange={this.handleChange}
+          ></textarea>
           <button className="form__btn" type="submit">
             Press Me!
           </button>

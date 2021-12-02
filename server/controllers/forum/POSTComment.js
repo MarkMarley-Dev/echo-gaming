@@ -9,14 +9,14 @@ function postComment(req, res) {
   //   console.log("Post comment request", req.body);
   try {
     const { user, comment } = req.body;
-    const commentData = JSON.parse(fs.readFileSync("./data/topics.json"));
+    const topicData = JSON.parse(fs.readFileSync("./data/topics.json"));
 
     const newComment = {
       user: user,
       comment: comment,
     };
-    commentData.push(newComment);
-    fs.writeFileSync("./data/topics.json", JSON.stringify(commentData));
+    topicData.push(newComment);
+    fs.writeFileSync("./data/topics.json", JSON.stringify(topicData));
     res.status(201).json(newComment);
   } catch (err) {
     res.status(500).json({ message: "No data found", error: err.message });
