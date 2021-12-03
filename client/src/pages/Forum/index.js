@@ -23,6 +23,7 @@ export default class Forum extends Component {
   }
   render() {
     let displayTopicsList = this.state.topicsList;
+    console.log("Displaying topic list info", displayTopicsList);
     return (
       <div>
         <header className="header">
@@ -105,46 +106,75 @@ export default class Forum extends Component {
             </div>
             // ! .. Player 4 .. ! \\
             <div className="find__players-ctn-one">
-              <div className="find__user-one"></div>
+              <div className="find__user-jake"></div>
               <div className="find__user-name-ctn">
-                <h3 className="find__user-name">Emily</h3>
+                <h3 className="find__user-name">Jake</h3>
                 <p className="find__user-name-likes">Enjoys playing</p>
               </div>
               <div className="find__user-preferred-games">
-                <div className="find__user-pokemon"> </div>
-                <div className="find__user-uno"> </div>
-                <div className="find__user-candy"> </div>
-                <div className="find__user-genshin"> </div>
+                <div className="find__user-perferred-games-ctn1">
+                  <div className="find__user-pokemon"> </div>
+                  <div className="find__user-uno"> </div>
+                </div>
+                <div className="find__user-perferred-games-ctn2">
+                  <div className="find__user-callofduty"> </div>
+                  <div className="find__user-genshin"> </div>
+                </div>
               </div>
               <h3 className="find__user-message">Send a Message</h3>
             </div>
             // ! .. Player 5 .. ! \\
             <div className="find__players-ctn-one">
-              <div className="find__user-one"></div>
+              <div className="find__user-jake"></div>
               <div className="find__user-name-ctn">
-                <h3 className="find__user-name">Emily</h3>
+                <h3 className="find__user-name">Jake</h3>
                 <p className="find__user-name-likes">Enjoys playing</p>
               </div>
               <div className="find__user-preferred-games">
-                <div className="find__user-pokemon"> </div>
-                <div className="find__user-uno"> </div>
-                <div className="find__user-candy"> </div>
-                <div className="find__user-genshin"> </div>
+                <div className="find__user-perferred-games-ctn1">
+                  <div className="find__user-pokemon"> </div>
+                  <div className="find__user-uno"> </div>
+                </div>
+                <div className="find__user-perferred-games-ctn2">
+                  <div className="find__user-callofduty"> </div>
+                  <div className="find__user-genshin"> </div>
+                </div>
               </div>
               <h3 className="find__user-message">Send a Message</h3>
             </div>
           </div>
         </section>
+        <section className="discussion__rooms">
+          <h1 className="discussion__title"> Discussion Rooms</h1>
 
-        {displayTopicsList.map((topic) => {
-          return (
-            <TopicListItem
-              key={topic.id}
-              topicTitle={topic.title}
-              topicID={topic.id}
-            />
-          );
-        })}
+          <input
+            className="discussion__search"
+            type="search"
+            placeholder="Search... "
+          />
+          <div className="dicussion__common">
+            <h2 className="discussion__subtitle"> Common Queries </h2>
+            {displayTopicsList.map((topic) => {
+              return (
+                <TopicListItem
+                  key={topic.id}
+                  topicTitle={topic.title}
+                  topicID={topic.id}
+                  topicContents={topic.contents}
+                  topicGame={topic.game}
+                  topicUser={topic.user}
+                />
+              );
+            })}
+            <div className="topic__see-all-ctn">
+              <p className="topic__see-all">See All &#x2192;</p>
+            </div>
+            <div className="topic__share-opinion-ctn">
+              <div className="topic__comment-logo"></div>
+              <h2 className="topic__share-title">Share Your Opinions</h2>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

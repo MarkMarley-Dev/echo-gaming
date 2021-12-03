@@ -1,0 +1,81 @@
+@use "../../styles/SASS/Abstracts/variables" as *;
+.topic {
+  &__list-item-ctn {
+    background-color: $white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  &__title {
+    color: $darkPurple;
+    padding-bottom: 1rem;
+  }
+  &__info-ctn {
+    display: flex;
+    justify-content: space-between;
+    color: $pinkMain;
+    font-weight: 600;
+  }
+  &__description {
+    color: $darkPurple;
+  }
+  &__join-ctn {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__join-icons-ctn {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+  }
+  &__join-text {
+    font-size: 1.3rem;
+    color: $darkPurple;
+    font-weight: 600;
+  }
+
+  &__icon1 {
+    background-image: url("../../Assets/Icons/roundtwo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  &__icon2 {
+    background-image: url("../../Assets/Icons/roundone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  &__icon3 {
+    background-image: url("../../Assets/Icons/roundthree.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  &__icon4 {
+    background-image: url("../../Assets/Icons/roundfour.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  &__see-all-ctn {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  &__see-all {
+    color: $white;
+    font-size: 1.5rem;
+  }
+}
