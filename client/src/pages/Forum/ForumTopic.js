@@ -3,6 +3,7 @@ import axios from "axios";
 import { TOPICS_LIST_API, COMMENTS_LIST_API } from "../../utils/api";
 import CommentListItem from "../../Components/CommentListItem/CommentListItem";
 import { ToastContainer, toast } from "react-toastify";
+import "./forumTopic.scss";
 export default class ForumTopic extends Component {
   state = {
     user: "",
@@ -122,6 +123,12 @@ export default class ForumTopic extends Component {
     console.log(this.state.topicComments);
     return (
       <div>
+        <header className="header">
+          <div className="header__alarm"></div>
+          <h1 className="header__title"> Community</h1>
+          <div className="header__settings"></div>
+        </header>
+        {/* 
         <ToastContainer
           position="top-left"
           autoClose={5000}
@@ -132,12 +139,43 @@ export default class ForumTopic extends Component {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-        />
+        /> */}
+        <section className="hero">
+          <div className="hero__img"></div>
+          <div className="hero__text-ctn">
+            <p className="hero__text">
+              UNO is the classic card game of matching colours and numbers that
+              is easy to pick up, and impossible to put down.
+            </p>
+          </div>
+        </section>
+        <section className="find__players-ctn">
+          <h1 className="find__players-title">Find partners to play with </h1>
+          <h3 className="find__players-subtitle">
+            Team up with members from the community
+          </h3>
+
+          <div className="find__players-ctn-one">
+            <div className="find__user-one"></div>
+            <div className="find__user-name-ctn">
+              <h3 className="find__user-name">Emily</h3>
+              <p className="find__user-name-likes">Enjoys playing</p>
+            </div>
+            <div className="find__user-preferred-games">
+              <div className="find__user-pokemon"> </div>
+              <div className="find__user-uno"> </div>
+              <div className="find__user-candy"> </div>
+              <div className="find__user-genshin"> </div>
+            </div>
+            <h3>Send a Message</h3>
+          </div>
+        </section>
 
         {this.state.topicComments.map((comment) => {
           return (
             <CommentListItem
               key={comment.id}
+              title={comment}
               comment={comment.comment}
               user={comment.user}
             />

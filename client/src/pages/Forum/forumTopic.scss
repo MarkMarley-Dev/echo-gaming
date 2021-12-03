@@ -1,0 +1,94 @@
+@use "../../styles/SASS/Abstracts/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  background-color: $lightgrey;
+  min-height: 5rem;
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+  padding-left: 2rem;
+
+  border-bottom: 15px solid $darkPurple;
+  &__alarm {
+    background-image: url("../../Assets/Icons/bell.png");
+    background-repeat: no-repeat;
+    height: 2rem;
+    width: 2rem;
+  }
+  &__settings {
+    background-image: url("../../Assets/Icons/settings.png");
+    background-repeat: no-repeat;
+    height: 2rem;
+    width: 2rem;
+  }
+  &__title {
+    color: $darkgrey;
+    padding-top: 2rem;
+  }
+}
+.hero {
+  min-height: 10rem;
+  padding: 1.5rem;
+  display: flex;
+  background-color: $white;
+
+  &__img {
+    background-image: url("../../Assets/Icons/uno.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: 8.3rem;
+    width: 8.3rem;
+  }
+  &__text-ctn {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 65%;
+    padding-left: 3rem;
+  }
+  &__text {
+    font-size: 1.4rem;
+  }
+}
+.find {
+  &__players-ctn {
+    display: flex;
+    flex-direction: column;
+    background-color: $darkPurple;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+  }
+  &__players-title {
+    color: $white;
+    font-weight: 500;
+  }
+  &__players-subtitle {
+    color: $white;
+    padding-bottom: 7rem;
+  }
+  &__players-ctn-one {
+    background-color: $lightgrey;
+    width: 30%;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+  }
+  &__user-one {
+    background-image: url("../../Assets/images/emily.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 7.1rem;
+    width: 7.1rem;
+    margin-top: -3rem;
+  }
+}
