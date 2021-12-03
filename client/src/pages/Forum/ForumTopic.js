@@ -155,19 +155,80 @@ export default class ForumTopic extends Component {
             Team up with members from the community
           </h3>
 
-          <div className="find__players-ctn-one">
-            <div className="find__user-one"></div>
-            <div className="find__user-name-ctn">
-              <h3 className="find__user-name">Emily</h3>
-              <p className="find__user-name-likes">Enjoys playing</p>
+          <div className="find__multi-players">
+            // ! .. Player 1 .. ! \\
+            <div className="find__players-ctn-one">
+              <div className="find__user-emily"></div>
+              <div className="find__user-name-ctn">
+                <h3 className="find__user-name">Emily</h3>
+                <p className="find__user-name-likes">Enjoys playing</p>
+              </div>
+              <div className="find__user-preferred-games">
+                <div className="find__user-pokemon"> </div>
+                <div className="find__user-uno"> </div>
+                <div className="find__user-candy"> </div>
+                <div className="find__user-genshin"> </div>
+              </div>
+              <h3>Send a Message</h3>
             </div>
-            <div className="find__user-preferred-games">
-              <div className="find__user-pokemon"> </div>
-              <div className="find__user-uno"> </div>
-              <div className="find__user-candy"> </div>
-              <div className="find__user-genshin"> </div>
+            // ! .. Player 2 .. ! \\
+            <div className="find__players-ctn-one">
+              <div className="find__user-jake"></div>
+              <div className="find__user-name-ctn">
+                <h3 className="find__user-name">Jake</h3>
+                <p className="find__user-name-likes">Enjoys playing</p>
+              </div>
+              <div className="find__user-preferred-games">
+                <div className="find__user-pokemon"> </div>
+                <div className="find__user-uno"> </div>
+                <div className="find__user-candy"> </div>
+                <div className="find__user-genshin"> </div>
+              </div>
+              <h3>Send a Message</h3>
             </div>
-            <h3>Send a Message</h3>
+            // ! ... player 3 ... ! \\
+            <div className="find__players-ctn-one">
+              <div className="find__user-jake"></div>
+              <div className="find__user-name-ctn">
+                <h3 className="find__user-name">Emily</h3>
+                <p className="find__user-name-likes">Enjoys playing</p>
+              </div>
+              <div className="find__user-preferred-games">
+                <div className="find__user-pokemon"> </div>
+                <div className="find__user-uno"> </div>
+                <div className="find__user-candy"> </div>
+                <div className="find__user-genshin"> </div>
+              </div>
+              <h3>Send a Message</h3>
+            </div>
+            <div className="find__players-ctn-one">
+              <div className="find__user-one"></div>
+              <div className="find__user-name-ctn">
+                <h3 className="find__user-name">Emily</h3>
+                <p className="find__user-name-likes">Enjoys playing</p>
+              </div>
+              <div className="find__user-preferred-games">
+                <div className="find__user-pokemon"> </div>
+                <div className="find__user-uno"> </div>
+                <div className="find__user-candy"> </div>
+                <div className="find__user-genshin"> </div>
+              </div>
+              <h3>Send a Message</h3>
+            </div>
+            <div className="find__players-ctn-one">
+              <div className="find__user-one"></div>
+              <div className="find__user-name-ctn">
+                <h3 className="find__user-name">Emily</h3>
+                <p className="find__user-name-likes">Enjoys playing</p>
+              </div>
+              <div className="find__user-preferred-games">
+                <div className="find__user-pokemon"> </div>
+                <div className="find__user-uno"> </div>
+                <div className="find__user-candy"> </div>
+                <div className="find__user-genshin"> </div>
+              </div>
+              <h3>Send a Message</h3>
+            </div>
           </div>
         </section>
 

@@ -64,6 +64,7 @@
     background-color: $darkPurple;
     padding-left: 2rem;
     padding-bottom: 2rem;
+    // overflow-y: scroll;
   }
   &__players-title {
     color: $white;
@@ -71,18 +72,51 @@
   }
   &__players-subtitle {
     color: $white;
-    padding-bottom: 7rem;
+    padding-bottom: 4rem;
   }
   &__players-ctn-one {
     background-color: $lightgrey;
-    width: 30%;
-    height: 25rem;
+    min-width: 45%;
+    height: 28rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
+    margin-top: 3rem;
+    margin-right: 2rem;
+    text-align: center;
+    z-index: 2;
   }
-  &__user-one {
+  &__user-emily,
+  &__user-jake,
+  &__user-colin {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 7.1rem;
+    width: 7.1rem;
+    margin-top: -3rem;
+    z-index: 3;
+    text-align: center;
+  }
+  &__user-emily {
+    background-image: url("../../Assets/images/emily.png");
+  }
+  &__user-jake {
+    background-image: url("../../Assets/images/jake.png");
+  }
+  &__user-colin {
+    background-image: url("../../Assets/images/colin.png");
+  }
+  &__user-name {
+    font-weight: 400;
+    font-size: 2rem;
+  }
+  &__user-name-likes {
+    font-size: 1.3rem;
+    color: $pinkMain;
+  }
+  &__user-two {
     background-image: url("../../Assets/images/emily.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -90,5 +124,66 @@
     height: 7.1rem;
     width: 7.1rem;
     margin-top: -3rem;
+    z-index: 3;
+  }
+  &__multi-players {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: visible;
+    width: auto;
+  }
+  &__user-preferred-games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  &__user-pokemon {
+    background-image: url("../../Assets/Icons/pokemon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+  &__user-uno {
+    // margin-right: 3rem;
+    background-image: url("../../Assets/Icons/uno.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+  &__user-candy {
+    background-image: url("../../Assets/Icons/candy.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+  &__user-genshin {
+    background-image: url("../../Assets/Icons//genshin.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+  &__user-basketball {
+    background-image: url("../../Assets/Icons/basketball.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+  &__user-callofduty {
+    background-image: url("../../Assets/Icons/callofduty.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 4rem;
+    min-height: 4rem;
   }
 }
