@@ -134,8 +134,15 @@
   }
   &__user-preferred-games {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 2rem 0;
+  }
+  &__user-perferred-games-ctn1,
+  &__user-perferred-games-ctn2 {
+    margin: 0.5rem 0.5rem;
+    display: flex;
   }
   &__user-pokemon {
     background-image: url("../../Assets/Icons/pokemon.png");
@@ -144,6 +151,7 @@
     background-size: cover;
     min-width: 4rem;
     min-height: 4rem;
+    margin-right: 1rem;
   }
   &__user-uno {
     // margin-right: 3rem;
@@ -161,6 +169,7 @@
     background-size: cover;
     min-width: 4rem;
     min-height: 4rem;
+    margin-right: 1rem;
   }
   &__user-genshin {
     background-image: url("../../Assets/Icons//genshin.png");
@@ -185,5 +194,6 @@
     background-size: cover;
     min-width: 4rem;
     min-height: 4rem;
+    margin-right: 1rem;
   }
 }
