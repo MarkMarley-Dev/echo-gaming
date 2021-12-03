@@ -175,6 +175,13 @@ export default class Forum extends Component {
             </div>
           </div>
         </section>
+        <footer className="footer">
+          <div className="footer__icon-one"></div>
+          <div className="footer__icon-two"></div>
+          <div className="footer__icon-three"></div>
+          <div className="footer__icon-four"></div>
+          <div className="footer__icon-five"></div>
+        </footer>
       </div>
     );
   }

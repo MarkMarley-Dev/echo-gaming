@@ -151,9 +151,9 @@ export default class ForumTopic extends Component {
             />
           );
         })}
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="form">
           <label>
-            <p>username</p>
+            <p className="comments__user">username</p>
           </label>
           <input
             type="text"
@@ -162,7 +162,7 @@ export default class ForumTopic extends Component {
             onChange={this.handleChange}
           ></input>
           <label>
-            <p>Comment</p>
+            <p className="comments__description">Comment</p>
           </label>
           <textarea
             className="form__comment-input"
@@ -173,6 +173,13 @@ export default class ForumTopic extends Component {
             Press Me!
           </button>
         </form>
+        <footer className="footer">
+          <div className="footer__icon-one"></div>
+          <div className="footer__icon-two"></div>
+          <div className="footer__icon-three"></div>
+          <div className="footer__icon-four"></div>
+          <div className="footer__icon-five"></div>
+        </footer>
       </div>
     );
   }
